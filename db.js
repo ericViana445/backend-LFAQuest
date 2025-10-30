@@ -6,6 +6,7 @@ const dbPromise = open({
   filename: "./database.db",
   driver: sqlite3.Database,
 });
+//teste
 
 (async () => {
   const db = await dbPromise;
