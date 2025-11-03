@@ -47,7 +47,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173", // ambiente local
-      "https://front-lfaquest.netlify.app", // frontend em produção
+      "https://lfaquest.netlify.app", // frontend em produção
     ],
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     credentials: true,
