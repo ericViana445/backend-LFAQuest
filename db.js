@@ -45,6 +45,9 @@ const dbPromise = open({
   try {
     await db.exec(`ALTER TABLE users ADD COLUMN selected_background INTEGER DEFAULT 0;`);
   } catch (e) {}
+    try {
+    await db.exec(`ALTER TABLE users ADD COLUMN unlocked_phases TEXT DEFAULT '["1"]';`);
+  } catch (e) {}
 
   // cria tabela de compras
   await db.exec(`

@@ -199,3 +199,22 @@ export const saveDiagnosticAnswers = async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 };
+
+// 🔓 Atualiza fases desbloqueadas do usuário
+export const updateUnlockedPhases = async (req, res) => {
+  try {
+    const db = await dbPromise;
+    const { id } = req.params;
+    const { unlocked_phases } = req.body; // array ex: ["1", "2"]
+
+    await db.run(
+      "UPDATE users SET unlocked_phases = ? WHERE id = ?",
+      [JSON.stringify(unlocked_phases), id]
+    );
+
+    res.json({ message: "Progresso de fases atualizado com sucesso!" });
+  } catch (err) {
+    console.error("❌ Erro ao atualizar fases desbloqueadas:", err);
+    res.status(500).json({ error: err.message });
+  }
+};
