@@ -16,6 +16,7 @@ export const getUserProfile = async (req, res) => {
          last_completed_date,
          selected_avatar,
          selected_background
+         unlocked_phases
        FROM users 
        WHERE id = ?`,
       [req.params.id]
