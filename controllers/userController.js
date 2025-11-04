@@ -15,7 +15,7 @@ export const getUserProfile = async (req, res) => {
          streak_count, 
          last_completed_date,
          selected_avatar,
-         selected_background
+         selected_background,
          unlocked_phases
        FROM users 
        WHERE id = ?`,
