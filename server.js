@@ -48,6 +48,7 @@ app.use(
     origin: [
       "http://localhost:5173", // ambiente local
       "https://lfaquest.netlify.app", // frontend em produção
+      "https://front-lfaquest.onrender.com"
     ],
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     credentials: true,
