@@ -1,6 +1,7 @@
 // db.js
 import sqlite3 from "sqlite3";
 import { open } from "sqlite";
+import { FaPuzzlePiece, FaRocket, FaFire, FaGift } from "react-icons/fa";
 
 const dbPromise = open({
   filename: "./database.db",
@@ -100,10 +101,10 @@ await db.exec(`
 
 // insere conquistas base se ainda não existirem
 const achievements = [
-  { name: "Primeiro Passo", description: "Concluiu a primeira lição", icon: "🧩", requirement_type: "xp", requirement_value: 10 },
-  { name: "Em Frente!", description: "Concluiu 5 lições", icon: "🚀", requirement_type: "xp", requirement_value: 50 },
-  { name: "Codificador Diário", description: "Manteve 3 dias de sequência", icon: "🔥", requirement_type: "streak", requirement_value: 3 },
-  { name: "Cliente Fiel", description: "Fez uma compra na loja", icon: "🎁", requirement_type: "purchase_count", requirement_value: 1 },
+  { name: "Primeiro Passo", description: "Concluiu a primeira lição", icon: <FaPuzzlePiece />, requirement_type: "xp", requirement_value: 10 },
+  { name: "Em Frente!", description: "Concluiu 5 lições", icon: <FaRocket />, requirement_type: "xp", requirement_value: 50 },
+  { name: "Codificador Diário", description: "Manteve 3 dias de sequência", icon: <FaFire />, requirement_type: "streak", requirement_value: 3 },
+  { name: "Cliente Fiel", description: "Fez uma compra na loja", icon: <FaGift />, requirement_type: "purchase_count", requirement_value: 1 },
 ];
 
 for (const a of achievements) {
